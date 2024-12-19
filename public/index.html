@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dil Raj</title>
+
+  <!-- Public index.html -->
+
+  <!-- External CSS links -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+  <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Sans-serif:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Add any other head-related tags here -->
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+
+  <!-- VanillaTilt.js script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.3/vanilla-tilt.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const tilt = document.querySelector(".tilt-image");
+      if (tilt) {
+        VanillaTilt.init(tilt, {
+          max: 25, // Maximum tilt angle
+          speed: 400, // Speed of the tilt effect
+          glare: true, // Enable glare effect
+          "max-glare": 0.2, // Maximum glare intensity
+        });
+      }
+    });
+  </script>
+
+  <!-- Typed.js script -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script>
+    var typeData = new Typed(".role", {
+      strings: [
+
+        "software Developer",
+        "Full Stack Developer",
+        "MERN Stack Developer",
+        "Machine learing Enthuaist ",
+        "DSA Enthuaist",
+      ],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1000,
+    });
+  </script>
+
+</body>
+
+</html>
