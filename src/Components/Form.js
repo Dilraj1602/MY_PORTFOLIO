@@ -9,23 +9,48 @@ function Form({isdarkmode}) {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    async function addresponse(data) {
+        const response = await fetch('http://localhost:4000/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        });
+        console.log(response);
+        return response.json();
+    }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
         if (!name || !email || !subject || !message) {
             toast.error("All fields are required!");
             return;
         }
+    
         // Logic to handle form submission, e.g., send data to the backend or show a toast notification
         console.log({ name, email, subject, message });
-        
-        toast.success("Message sent successfully!");
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
+    
+        try {
+            // Wait for the response from the backend before clearing the form
+            await addresponse({ name, email, subject, message });
+            
+            // Show success message once the response is added successfully
+            toast.success("Message sent successfully!");
+            
+            // Clear form fields after successful submission
+            setName("");
+            setEmail("");
+            setSubject("");
+            setMessage("");
+        } catch (error) {
+            // If there's an error, show an error toast
+            toast.error("Failed to send the message. Please try again later.");
+            console.error(error);
+        }
     };
-
+    
     return (
         <form
             onSubmit={handleSubmit}
