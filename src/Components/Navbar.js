@@ -56,6 +56,7 @@ function Navbar({ tooglemode, isdarkmode }) {
     useEffect(() => {
         const handleScrollEvent = () => {
             setIsScrolled(window.scrollY > 0);
+            setIsMenuOpen(false);
         };
 
         window.addEventListener("scroll", handleScrollEvent);
@@ -65,7 +66,7 @@ function Navbar({ tooglemode, isdarkmode }) {
 
     return (
         <div
-            className={`fixed top-0 left-0 w-full z-50 p-[20px] ${isScrolled ? "shadow-sm" : "shadow-none"} transition-all duration-200 ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"} `}
+            className={`fixed top-0 left-0 w-full z-50 p-[20px] ${isScrolled ? "shadow-sm" : "shadow-none"} transition-all duration-200 ${isdarkmode ? "bg-[var(--dark-body-color)] text-white "  : "bg-white text-black "} `}
         >
             <div className="max-w-[1000px] mx-auto flex justify-between items-center">
                 <div className={`text-xl font-bold hover:cursor-pointer ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-black"}`}>
@@ -103,7 +104,7 @@ function Navbar({ tooglemode, isdarkmode }) {
                 </div>
 
                 {/* Mobile Menu */}
-                <div className="flex md:hidden">
+                <div className={`flex md:hidden `}>
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <i className="uil uil-bars text-2xl"></i>
                     </button>
@@ -122,11 +123,11 @@ function Navbar({ tooglemode, isdarkmode }) {
                                 handleScroll(tab.id);
                                 setIsMenuOpen(false);
                             }}
-                            className={`transition-colors duration-200 ${
+                            className={`transition-colors duration-200  ${
                                 selectedTab === tab.id
                                     ? "text-[var(--first-color)] font-semibold"
-                                    : "text-[var(--title-color)]"
-                            } hover:text-[var(--first-color-alt)]`}
+                                    : (isdarkmode ? "text-[var(--dark-title-color)]" : "text-black") 
+                            } hover:text-[var(--first-color-alt)]  `}
                         >
                             {tab.name}
                         </a>
