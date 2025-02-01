@@ -1,6 +1,6 @@
 import Button from "./Button";
 
-function ProjectsSection({ img, title, description,isdarkmode }) {
+function ProjectsSection({ img, title, description,isdarkmode,url }) {
   return (
     <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-6 items-center px-4 md:px-6 py-4 md:py-8">
       {/* Project Image */}
@@ -8,7 +8,7 @@ function ProjectsSection({ img, title, description,isdarkmode }) {
         <img
           src={img}
           alt={title}
-          className={`w-[90%] sm:w-[80%] md:w-full max-w-[400px] h-[220px] md:h-[260px] object-cover border-2 ${isdarkmode?"border-[var(--dark-body-color)]":"border-gray-400"} rounded-lg shadow-md`}
+          className={` sm:w-[80%] md:w-full w-[400px] h-[220px] md:h-[260px] object-cover border-2 ${isdarkmode?"border-zinc-500":"border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
         />
       </div>
 
@@ -26,6 +26,7 @@ function ProjectsSection({ img, title, description,isdarkmode }) {
             icon="uil uil-arrow-right button_icon"
             aria-label={`Check out project: ${title}`}
             isdarkmode={isdarkmode}
+            onClick={() => window.open(url, "_blank")}
           />
         </div>
       </div>
