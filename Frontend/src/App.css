@@ -1,0 +1,103 @@
+/* Default Variables */
+:root {
+    --header-height: 3rem;
+    --hue-color: 250;
+    --first-color: hsl(var(--hue-color), 69%, 61%);
+    --first-color-second: hsl(var(--hue-color), 69%, 61%);
+    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
+    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
+    --title-color: hsl(var(--hue-color), 8%, 15%);
+    --text-color: hsl(var(--hue-color), 8%, 45%);
+    --text-color-light: hsl(var(--hue-color), 8%, 65%);
+    --input-color: hsl(var(--hue-color), 70%, 96%);
+    --body-color: hsl(var(--hue-color), 60%, 99%);
+    --container-color: #fff;
+    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
+    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
+    --body-font: "Poppins", sans-serif;
+    --big-font-size: 2rem;
+    --h1-font-size: 1.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: 0.938rem;
+    --small-font-size: 0.813rem;
+    --smaller-font-size: 0.75rem;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    --mb-0-25: 0.25rem;
+    --mb-0-5: 0.5rem;
+    --mb-0-75: 0.75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+    --z-tooltip: 10;
+    --z-fixed: 100;
+    --z-modal: 1000;
+
+    /* Dark Mode Variables */
+    --dark-first-color-second: hsl(var(--hue-color), 30%, 8%);
+    --dark-title-color: hsl(var(--hue-color), 8%, 95%);
+    --dark-text-color: hsl(var(--hue-color), 8%, 75%);
+    --dark-input-color: hsl(var(--hue-color), 29%, 16%);
+    --dark-body-color: hsl(var(--hue-color), 28%, 12%);
+    --dark-container-color: hsl(var(--hue-color), 29%, 16%);
+    --dark-scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
+    --dark-scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
+
+    --thumb-color: #ffffff; /* White thumb in light mode */
+    --thumb-hover-color: #e0e0e0; /* Slightly gray on hover */
+    --track-color: #f1f1f1; /* Light gray track */
+
+    --val-color: White;
+}
+
+[data-theme="dark"] {
+    --val-color: var(--dark-body-color);
+}
+
+/* Light Mode Scrollbar */
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--first-color-alt);
+    border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--first-color);
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--body-color);
+    border-radius: 8px;
+}
+
+/* Dark Mode Scrollbar */
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: var(--dark-body-color);
+    border-radius: 8px;
+}
+
+.scrollp {
+    overflow: hidden;
+    position: relative;
+}
+
+/* Light Mode scrollbar for Firefox */
+.scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: var(--first-color-alt) var(--body-color);
+}
+
+/* Typography */
+.about_h2 {
+    font-size: var(--h3-font-size);
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-0-75);
+}
