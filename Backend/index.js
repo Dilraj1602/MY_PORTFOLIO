@@ -1,5 +1,5 @@
 const express = require('express');
-const cors = require('cors'); // Importing CORS
+const cors = require('cors'); 
 const app = express();
 
 const connectDB = require('./config/database');
@@ -7,7 +7,7 @@ const response = require('./models/response');
 
 // Use CORS middleware
 app.use(cors()); 
-
+require('dotenv').config();
 app.use(express.json());
 
 // In your backend (Express)
@@ -35,8 +35,8 @@ app.get('/', (req, res) => {
     res.send("hello world");
 });
 
-app.listen(4000, () => {
-    console.log("Server is running on port 4000");
+app.listen(process.env.PORT, () => {
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
 
 connectDB();
