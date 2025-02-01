@@ -1,8 +1,7 @@
 import "../App.css";
 import { useState, useEffect } from "react";
-import { MdDarkMode } from "react-icons/md";
-import { CiDark } from "react-icons/ci";
 import { BsFillSunFill } from "react-icons/bs";
+
 function Navbar({ tooglemode, isdarkmode }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [selectedTab, setSelectedTab] = useState("home");
@@ -26,11 +25,7 @@ function Navbar({ tooglemode, isdarkmode }) {
     };
 
     useEffect(() => {
-        const observerOptions = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.9,
-        };
+        const observerOptions = { root: null, rootMargin: "0px", threshold: 0.9 };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
@@ -66,10 +61,14 @@ function Navbar({ tooglemode, isdarkmode }) {
 
     return (
         <div
-            className={`fixed top-0 left-0 w-full z-50 p-[20px] ${isScrolled ? "shadow-sm" : "shadow-none"} transition-all duration-200 ${isdarkmode ? "bg-[var(--dark-body-color)] text-white "  : "bg-white text-black "} `}
+            className={`fixed top-0 left-0 w-full z-50 p-[20px] ${
+                isScrolled ? "shadow-sm" : "shadow-none"
+            } transition-all duration-200 ${
+                isdarkmode ? "bg-[var(--dark-body-color)] text-white" : "bg-white text-black"
+            }`}
         >
             <div className="max-w-[1000px] mx-auto flex justify-between items-center">
-                <div className={`text-xl font-bold hover:cursor-pointer ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-black"}`}>
+                <div className={`text-xl font-bold cursor-pointer ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-black"}`}>
                     Dil Raj
                 </div>
 
@@ -86,7 +85,9 @@ function Navbar({ tooglemode, isdarkmode }) {
                             className={`transition-colors duration-200 ${
                                 selectedTab === tab.id
                                     ? "text-[var(--first-color-second)]"
-                                    : (isdarkmode ? "text-[var(--dark-title-color)]" : "text-black") 
+                                    : isdarkmode
+                                    ? "text-[var(--dark-title-color)]"
+                                    : "text-black"
                             } hover:text-[var(--first-color-alt)]`}
                         >
                             {tab.name}
@@ -95,25 +96,29 @@ function Navbar({ tooglemode, isdarkmode }) {
 
                     {/* Dark Mode Toggle */}
                     <div onClick={tooglemode} className="cursor-pointer">
-                        {!isdarkmode ? (
-                            <BsFillSunFill  className="text-2xl text-[var(--first-color)] " />
-                        ) : (
-                            <BsFillSunFill  className="text-2xl text-white" />
-                        )}
+                        <BsFillSunFill className={`text-2xl ${isdarkmode ? "text-white" : "text-[var(--first-color)]"}`} />
                     </div>
                 </div>
 
-                {/* Mobile Menu */}
-                <div className={`flex md:hidden `}>
+                {/* Mobile Menu Button */}
+                <div className="flex md:hidden">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
                         <i className="uil uil-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
 
+            <div onClick={tooglemode} className="cursor-pointer md:hidden absolute top-6 right-[4rem]">
+                        <BsFillSunFill className={`text-2xl ${isdarkmode ? "text-white" : "text-[var(--first-color)]"}`} />
+            </div>
+
             {/* Mobile Dropdown */}
             {isMenuOpen && (
-                <div className={`flex flex-col md:hidden ${isdarkmode ?"text-[var(--dark-title-color)]" : "text-black" } shadow-lg rounded-lg mt-2 p-4 space-y-4`}>
+                <div
+                    className={`absolute right-4 top-[60px] flex flex-col w-[150px] md:hidden bg-opacity-80 backdrop-blur-md rounded-lg p-3 space-y-3 ${
+                        isdarkmode ? "bg-gray-800 text-white" : "bg-white text-black"
+                    }`}
+                >
                     {tabs.map((tab) => (
                         <a
                             key={tab.id}
@@ -123,11 +128,13 @@ function Navbar({ tooglemode, isdarkmode }) {
                                 handleScroll(tab.id);
                                 setIsMenuOpen(false);
                             }}
-                            className={`transition-colors duration-200  ${
+                            className={`transition-colors duration-200 ${
                                 selectedTab === tab.id
                                     ? "text-[var(--first-color)] font-semibold"
-                                    : (isdarkmode ? "text-[var(--dark-title-color)]" : "text-black") 
-                            } hover:text-[var(--first-color-alt)]  `}
+                                    : isdarkmode
+                                    ? "text-white"
+                                    : "text-black"
+                            } hover:text-[var(--first-color-alt)]`}
                         >
                             {tab.name}
                         </a>
