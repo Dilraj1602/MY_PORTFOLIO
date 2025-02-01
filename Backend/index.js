@@ -1,42 +1,37 @@
 const express = require('express');
 const cors = require('cors'); 
+const {connect} = require('./config/database');
+const Response = require('./models/response'); 
+
 const app = express();
-
-const connectDB = require('./config/database');
-const response = require('./models/response');
-
-// Use CORS middleware
-app.use(cors()); 
 require('dotenv').config();
+
+app.use(cors());
 app.use(express.json());
 
-// In your backend (Express)
-app.post('/add', (req, res) => {
-    const { name, email, subject, message } = req.body;
-    const newResponse = new response({
-        name,
-        email,
-        subject,
-        message
-    });
+connect();
 
-    newResponse.save()
-        .then(() => {
-            res.status(201).json({ message: "Response added" }); 
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: "Server error. Please try again later." }); 
-        });
-});
 
 
 app.get('/', (req, res) => {
     res.send("hello world");
 });
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
+app.post('/add', async (req, res) => {
+    try {
+        const { name, email, subject, message } = req.body;
+        const newResponse = new Response({ name, email, subject, message });
+
+        await newResponse.save();
+        res.status(201).json({ message: "Response added" });
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Server error. Please try again later." });
+    }
 });
 
-connectDB();
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});
