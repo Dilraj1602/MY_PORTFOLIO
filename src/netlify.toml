@@ -1,9 +1,0 @@
-[build]
-    command="npm run build"
-    publish='/build"
-    base="/"
-
-[[redirects]]
-    form="/*"
-    to="/index.html"
-    status=200
