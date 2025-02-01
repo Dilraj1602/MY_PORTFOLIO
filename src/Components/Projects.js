@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import data from "../data";
 
 function Projects({isdarkmode}) {
-    const [idx, setIdx] = useState(1);
+    const [idx, setIdx] = useState(0);
     const { projects } = data;
     let n = projects.length;
     if (!projects || projects.length === 0) {
@@ -49,6 +49,7 @@ function Projects({isdarkmode}) {
                     img={projects[idx].img}
                     title={projects[idx].title}
                     description={projects[idx].description}
+                    url={projects[idx].url}
                     className=" "
                     isdarkmode={isdarkmode}
                 />
