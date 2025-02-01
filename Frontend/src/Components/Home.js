@@ -49,7 +49,7 @@ function Home({isdarkmode}) {
     }, []);
 
     return (
-        <div className="flex space-x-16 pt-6 sm:pt-12 md:pt-24 translate-y-12 w-full">
+        <div className="flex justify-between sm:space-x-16 pt-6 sm:pt-12 md:pt-24 translate-y-12 w-full">
             {/* Social Media Section */}
             <div className="flex flex-col space-y-8">
                 {social_media.map((item, index) => (
