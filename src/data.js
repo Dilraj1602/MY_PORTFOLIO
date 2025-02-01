@@ -13,12 +13,12 @@ import { MdOutlineMailOutline } from "react-icons/md";
 
 import c from "./assests/c.png";
 import cplus from "./assests/c++.png";
-
+import Studynotion from "./assests/studynotion.png";
 import Tic_Tac_Toe from "./assests/tic_tac_toe.jpeg";
 import Chess from "./assests/chess-3960184_640.jpg";
 import Razorpay_clone from "./assests/razorpay_clone.png";
 import Portfolio from "./assests/Portfolio.png";
-import Ecomzy from "./assests/Ecomzy_1.png"
+import Ecomzy from "./assests/Ecomzy.png";
 
 const user_data = {
   bio: `Hey there,👋 I'm Dil Raj, a 20-year-old CSE undergrad passionate
@@ -27,7 +27,7 @@ const user_data = {
     Stack Web Developer 👨🏻‍💻, with a strong interest in AI and problem-solving.
     I share my learnings through speaking engagements and write-ups. ✍🏻`,
 
-  resume:["https://drive.google.com/file/d/1tpsg3eesRE_-7bNFhvim_g75hMZg6o-Q/view?usp=sharing"],
+  resume:["https://drive.google.com/file/d/1bLb-PmM30b0bB5yRSeJfVCRnPV_rWtE3/view?usp=drive_link"],
 
   languages1: ["C", "C++"],
   img4: [c, cplus],
@@ -68,29 +68,41 @@ const user_data = {
 
   projects: [
     {
+      img:Studynotion,
+      title: "Study Notion",
+      description: "An E-Learning Platform where Students can purchase, filter, and track courses, while instructors can upload content and engage with learners. The platform offers secure payments, progress tracking, and certifications, making online education seamless and accessible. 🚀",
+      url:"https://github.com/Dilraj1602/StudyNotion"
+    },
+    {
       img: Tic_Tac_Toe,
       title: "Tic Tac Toe",
       description: "A classic two-player game built with interactive UI, allowing users to play and reset the game seamlessly.",
+      url:"https://github.com/Dilraj1602/Tic-Tac-Toe"
+
     },
     {
       img: Chess,
       title: "Chess",
       description: "A fully functional chess game with drag-and-drop functionality, supporting two-player mode and game reset.",
+      url:"https://github.com/Dilraj1602/Chess"
     },
     {
       img: Razorpay_clone,
       title: "Razorpay Clone",
       description: "A simplified clone of the Razorpay payment gateway, showcasing user-friendly interfaces and mock payment processing.",
+      url:"https://github.com/Dilraj1602/Razorpay_clone_frontend"
     },
     {
       img: Portfolio,
       title: "Portfolio",
       description: "A personal portfolio website to showcase skills, projects, and achievements, built with responsive design and smooth navigation.",
+      url:"https://github.com/Dilraj1602/MY_PORTFOLIO"
     },
     {
       img: Ecomzy,
-      title: "Ecomzy",
-      description: "A shopping cart website with features like product selection, cart management, and integrated billing functionality.",
+      title: "Weather Forecast",
+      description: "Built a real time weather forecasting application using React.js, Tailwind CSS, and Open-WeatherMap API, API calls for real-time data (temperature, humidity, wind speed)",
+      url:"https://github.com/Dilraj1602/weather_forecast"
     },
   ],
 
