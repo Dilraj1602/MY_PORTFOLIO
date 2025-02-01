@@ -39,7 +39,7 @@ function About({isdarkmode}) {
           <img
             src={user_img}
             alt="User"
-            className="tilt-effect w-[320px] h-[350px] sm:w-[350px] sm:h-[400px] object-cover rounded-xl"
+            className="tilt-effect w-[300px] h-[330px] sm:w-[350px] sm:h-[400px] object-cover rounded-xl"
           />
         </div>
 
