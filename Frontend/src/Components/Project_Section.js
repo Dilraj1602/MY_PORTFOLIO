@@ -8,7 +8,7 @@ function ProjectsSection({ img, title, description,isdarkmode,url }) {
         <img
           src={img}
           alt={title}
-          className={`w-[320px] sm:w-[80%] md:w-full  h-[220px] md:h-[260px] object-cover border-2 ${isdarkmode?"border-zinc-500":"border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
+          className={`w-[300px] sm:w-[80%] md:w-full  h-[220px] md:h-[260px] object-cover border-2 ${isdarkmode?"border-zinc-500":"border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
         />
       </div>
 
