@@ -28,7 +28,7 @@ function Contact({isdarkmode}) {
                 </div>
 
                 {/* Form */}
-                <div className="w-[460px] sm:w-[400px] md:w-[460px] lg:w-[600px] ">
+                <div className="w-[300px] sm:w-[460px] md:w-[460px] lg:w-[600px] ">
                     <Form isdarkmode={isdarkmode} />
                 </div>
             </div>
