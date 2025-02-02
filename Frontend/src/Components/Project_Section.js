@@ -13,7 +13,7 @@ function ProjectsSection({ img, title, description,isdarkmode,url }) {
       </div>
 
       {/* Project Details */}
-      <div className="w-[90%] md:w-1/2 flex flex-col space-y-4 text-center md:text-left mt-6 md:mt-0">
+      <div className="w-[300px] md:w-1/2 flex flex-col space-y-4 text-center md:text-left mt-6 md:mt-0">
         <h2 className="text-xl md:text-2xl font-semibold text-[var(--body-font)] font-Poppins">
           {title}
         </h2>
