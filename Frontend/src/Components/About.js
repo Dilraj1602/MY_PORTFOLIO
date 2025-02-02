@@ -45,7 +45,7 @@ function About({isdarkmode}) {
 
         {/* Text Section */}
         <div className=" md:w-[55%] flex flex-col space-y-[40px]">
-          <div className={`w-[320px] md:w-[78%] leading-[2rem] font-Poppins text-xl ${isdarkmode ?"text-[var(--dark-text-color)]" :"text-[var(--text-color)]"} `}>
+          <div className={`w-[320px] md:w-[78%] leading-[2rem] font-Poppins text-base sm:text-xl ${isdarkmode ?"text-[var(--dark-text-color)]" :"text-[var(--text-color)]"} `}>
             {user_data.bio} {/* Displaying bio from data */}
           </div>
           <div onClick={openResume}>
