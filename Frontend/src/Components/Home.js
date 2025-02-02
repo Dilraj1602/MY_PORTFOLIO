@@ -77,11 +77,11 @@ function Home({isdarkmode}) {
 
             <div className=" flex flex-col md:flex-row-reverse md:justify-between md:items-center md:w-[77%]">
 
-                <div className={`w-[250px] h-[250px] tilt-effect_1 rounded-lg ${isdarkmode ?"bg-[var(--dark-body-color)]" :"bg-white" } `}>
+                <div className={`w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] tilt-effect_1 rounded-lg ${isdarkmode ?"bg-[var(--dark-body-color)]" :"bg-white" } `}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 200 200"
-                        className="w-[250px] h-[250px]  "
+                        className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px]  "
                     >
                         <defs>
                             <clipPath id="shapeClip">
@@ -116,14 +116,14 @@ function Home({isdarkmode}) {
                 </div>
 
                 {/* Text Section */}
-                <div className="flex flex-col items-start space-y-6 pl-[7%]">
-                    <h1 className={`text-5xl font-semibold ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-[var(--title-color)]"} `}>
+                <div className="flex flex-col items-start space-y-6 pl-[7%] ">
+                    <h1 className={`text-2xl sm:text-5xl font-semibold ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-[var(--title-color)]"} `}>
                         Hi, I'm Dil Raj
                     </h1>
-                    <h2 className={`text-2xl text-gray-700  ${isdarkmode ?"text-[var(--dark-title-color)]" : "text-[var(--text-color)]"} font-[500]`}>
-                        I am a <span className={`role ${isdarkmode ?"text-[var(--dark-text-color)]" : "text-[var(--text-color)]"} font-[500]`}></span>
+                    <h2 className={`text-base sm:text-2xl  text-gray-700  ${isdarkmode ?"text-[var(--dark-title-color)]" : "text-[var(--text-color)]"} font-[500]`}>
+                        I am a <span className={`role ${isdarkmode ?"text-[var(--dark-text-color)]" : "text-[var(--text-color)]"} font-[500] text-xl `}></span>
                     </h2>
-                    <p className="text-lg text-[var(--text-color-light)] w-[80%]">
+                    <p className="text-base sm:text-lg text-[var(--text-color-light)] w-[80%]">
                         Building software to solve real-life problems.
                     </p>
                     <Button text="Contact Me" icon="uil uil-message" onClick={() => handleScroll_1("contact")} isdarkmode={isdarkmode} />
