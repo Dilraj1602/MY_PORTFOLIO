@@ -7,7 +7,7 @@ function Contact({isdarkmode}) {
     console.log(contacts);
 
     return (
-        <div className={`pt-[5.5rem] flex flex-col  relative justify-between items-center px-[5%] sm:px-0 mb-10 lg:mb-0 ${isdarkmode ? "text-white" : "text-black"}`}>
+        <div className={`max-w-[1080px] mx-auto pt-[5.5rem] flex flex-col  relative justify-between items-center px-[5%] sm:px-0 mb-10 lg:mb-0 ${isdarkmode ? "text-white" : "text-black"}`}>
             <h1 className="text-[2rem]  font-bold text-[var(--body-font)] font-Poppins">Contact Me</h1>
             <p className={`text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} `}>Want to connect? My inbox is always open!</p>
 
