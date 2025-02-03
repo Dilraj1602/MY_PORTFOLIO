@@ -17,16 +17,16 @@ function Footer({isdarkmode}) {
     };
 
     return (
-        <div className={` w-[100vw] ${isdarkmode?"bg-[var(--dark-container-color)]":"bg-[var(--first-color)]"} w-full py-8  `}>
+        <div className={`  ${isdarkmode?"bg-[var(--dark-container-color)]":"bg-[var(--first-color)]"} w-full py-8  `}>
             {/* Main Footer Container */}
-            <div className="max-w-[1200px] mx-auto text-center  space-y-8">
+            <div className="px-[5%] sm:px-0 max-w-[1200px] mx-auto text-center  space-y-8">
                 {/* Footer Title */}
                 <div className="text-4xl font-bold font-Poppins text-white">
                     Dil Raj
                 </div>
 
                 {/* Navigation Tabs */}
-                <div className="flex justify-center space-x-8">
+                <div className="flex flex-wrap items-center justify-center space-x-8 w-auto ">
                     {tabs.map((tab, index) => (
                         <a
                             key={index}
@@ -43,7 +43,7 @@ function Footer({isdarkmode}) {
                 </div>
 
                 {/* Social Media Icons */}
-                <div className="flex justify-center space-x-6">
+                <div className="flex flex-wrap justify-center space-x-6">
                     <a
                         href="https://www.linkedin.com/in/dil-raj-503b44266/"
                         target="_blank"
