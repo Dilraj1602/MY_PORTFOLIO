@@ -10,7 +10,7 @@ function Form({isdarkmode}) {
     const [message, setMessage] = useState("");
 
     async function addresponse(data) {
-        const response = await fetch('http://localhost:4000/add', {
+        const response = await fetch('https://my-portfolio-i7oq.onrender.com/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
