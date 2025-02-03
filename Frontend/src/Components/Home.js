@@ -49,7 +49,7 @@ function Home({isdarkmode}) {
     }, []);
 
     return (
-        <div className="flex justify-between sm:space-x-16 pt-6 sm:pt-12 md:pt-24 translate-y-12 w-full">
+        <div className="px-[5%] sm:px-0 w-[90%] sm:w-full flex justify-center sm:justify-evenly md:justify-between space-x-[6%]  sm:space-x-[4%] md:space-x-16 pt-6 sm:pt-12 md:pt-24 translate-y-12 ">
             {/* Social Media Section */}
             <div className="flex flex-col space-y-8">
                 {social_media.map((item, index) => (
@@ -77,11 +77,11 @@ function Home({isdarkmode}) {
 
             <div className=" flex flex-col md:flex-row-reverse md:justify-between md:items-center md:w-[77%]">
 
-                <div className={`w-[200px] h-[200px] sm:w-[250px] sm:h-[250px] tilt-effect_1 rounded-lg ${isdarkmode ?"bg-[var(--dark-body-color)]" :"bg-white" } `}>
+                <div className={`w-[90%] h-[90%] sm:w-[250px] sm:h-[250px] tilt-effect_1 rounded-lg ${isdarkmode ?"bg-[var(--dark-body-color)]" :"bg-white" } `}>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 200 200"
-                        className="w-[200px] h-[200px] sm:w-[250px] sm:h-[250px]  "
+                        className="w-[90%] h-[90%] sm:w-[250px] sm:h-[250px]  "
                     >
                         <defs>
                             <clipPath id="shapeClip">
@@ -116,7 +116,7 @@ function Home({isdarkmode}) {
                 </div>
 
                 {/* Text Section */}
-                <div className="flex flex-col items-start space-y-6 pl-[7%] ">
+                <div className="w-[90%] flex flex-col items-start space-y-6 pl-[7%] ">
                     <h1 className={`text-2xl sm:text-5xl font-semibold ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-[var(--title-color)]"} `}>
                         Hi, I'm Dil Raj
                     </h1>
