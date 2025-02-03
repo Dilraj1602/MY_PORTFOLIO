@@ -2,18 +2,18 @@ import Button from "./Button";
 
 function ProjectsSection({ img, title, description,isdarkmode,url }) {
   return (
-    <div className="w-full max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-6 items-center px-4 md:px-6 py-4 md:py-8">
+    <div className="w-[95%] sm:w-full max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-6 items-center px-4 md:px-6 py-4 md:py-8">
       {/* Project Image */}
       <div className="w-full md:w-1/2 max-w-lg flex justify-center md:justify-start">
         <img
           src={img}
           alt={title}
-          className={`w-[300px] sm:w-[80%] md:w-full  h-[220px] md:h-[260px] object-cover border-2 ${isdarkmode?"border-zinc-500":"border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
+          className={` max-w-[200px] sm:max-w-[1080px] w-[80%] h-[80%] md:w-full sm:w-[350px] sm:h-[220px] md:h-[260px] object-fill sm:object-cover border-2 ${isdarkmode?"border-zinc-500":"border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
         />
       </div>
 
       {/* Project Details */}
-      <div className="w-[300px] md:w-1/2 flex flex-col space-y-4 text-center md:text-left mt-6 md:mt-0">
+      <div className="w-[95%] md:w-1/2 flex flex-col space-y-4 text-center md:text-left mt-6 md:mt-0">
         <h2 className="text-xl md:text-2xl font-semibold text-[var(--body-font)] font-Poppins">
           {title}
         </h2>
