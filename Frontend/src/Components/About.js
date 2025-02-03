@@ -25,15 +25,15 @@ function About({isdarkmode}) {
   };
 
   return (
-    <div className="mt-[5.5rem] flex flex-col relative justify-between items-center mx-auto">
+    <div className="mt-[5.5rem] px-[5%] sm:px-0 w-[90%] sm:w-full flex flex-col relative justify-between items-center mx-auto">
       {/* Header Section */}
-      <h1 className={`text-[2rem] font-bold ${isdarkmode ?"text-white ": "text-black"} text-[var(--body-font)] font-Poppins`}>
+      <h1 className={`text-[1.5rem] sm:text-[2rem] font-bold ${isdarkmode ?"text-white ": "text-black"} text-[var(--body-font)] font-Poppins`}>
         About Me
       </h1>
       <p className="text-[1.1rem] text-gray-400">My Introduction</p>
 
       {/* Main Section */}
-      <div className="py-[50px] md:pl-[7%] flex flex-col items-center space-y-10 md:flex-row md:space-x-[100px] md:justify-between w-[100%]">
+      <div className="py-[50px] md:pl-[7%] flex flex-col items-center space-y-10 md:flex-row md:space-x-[100px] md:justify-between w-[90%] sm:w-[100%]">
         {/* Image Section with Tilt Effect */}
         <div className="md:w-[400px] md:pt-[20px]">
           <img
@@ -44,11 +44,11 @@ function About({isdarkmode}) {
         </div>
 
         {/* Text Section */}
-        <div className=" md:w-[55%] flex flex-col space-y-[40px]">
-          <div className={`w-[320px] md:w-[78%] leading-[2rem] font-Poppins text-base sm:text-xl ${isdarkmode ?"text-[var(--dark-text-color)]" :"text-[var(--text-color)]"} `}>
+        <div className=" md:w-[55%] flex flex-col items-center justify-center sm:items-start sm:justify-start space-y-[40px]">
+          <div className={`w-[100%]  sm:w-[95%] leading-[2rem] font-Poppins text-base sm:text-xl ${isdarkmode ?"text-[var(--dark-text-color)]" :"text-[var(--text-color)]"} `}>
             {user_data.bio} {/* Displaying bio from data */}
           </div>
-          <div onClick={openResume}>
+          <div onClick={openResume} className="flex justify-center sm:justify-start items-center ">
             <Button text="Resume" icon="uil uil-file-download-alt button_icon" isdarkmode={isdarkmode} />
           </div>
         </div>
