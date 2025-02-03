@@ -10,7 +10,7 @@ import Footer from "./Components/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [isdarkmode, setisdarkmode] = useState(true);
+  const [isdarkmode, setisdarkmode] = useState(false);
 
   function tooglemode() {
     console.log("toggle");
