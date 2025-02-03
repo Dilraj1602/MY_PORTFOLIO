@@ -27,19 +27,18 @@ function Projects({isdarkmode}) {
     };
 
     return (
-        <div className={`pt-[5.5rem] flex flex-col relative justify-center items-center ${isdarkmode?"text-white" :"text-black" }`}>
+        <div className={`w-[99%] pt-[5.5rem] flex flex-col relative justify-center items-center ${isdarkmode?"text-white" :"text-black" }`}>
             <h1 className="text-[2rem] font-bold text-[var(--body-font)] font-Poppins">
                 Projects
             </h1>
             <p className={`text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} `}>Most recent work</p>
 
-            <div className="flex  items-center justify-center mt-10 lg:w-[1000px] space-x-4 ">
+            <div className="flex w-[79%] sm:w-full items-center justify-center mt-10 lg:w-[1000px] sm:space-x-4 ">
                 {/* Left Button */}
                 <div className="">
 
                     <FaAngleLeft
-                        size="3rem"
-                        className="hover:cursor-pointer text-[var(--first-color)]"
+                        className="hover:cursor-pointer text-[var(--first-color)] text-[2rem] sm:text-[3rem]  "
                         onClick={handlePrev}
                     />
                 </div>
@@ -57,8 +56,7 @@ function Projects({isdarkmode}) {
                 {/* Right Button */}
                 <div>
                     <FaAngleRight
-                        size="3rem"
-                        className="hover:cursor-pointer text-[var(--first-color)]"
+                        className="hover:cursor-pointer text-[var(--first-color)] text-[2rem] sm:text-[3rem] "
                         onClick={handleNext}
                     />
                 </div>
