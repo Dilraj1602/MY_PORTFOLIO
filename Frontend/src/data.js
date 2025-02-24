@@ -27,7 +27,7 @@ const user_data = {
     Stack Web Developer 👨🏻‍💻, with a strong interest in AI and problem-solving.
     I share my learnings through speaking engagements and write-ups. ✍🏻`,
 
-  resume:["https://drive.google.com/file/d/1bLb-PmM30b0bB5yRSeJfVCRnPV_rWtE3/view?usp=drive_link"],
+  resume:["https://drive.google.com/file/d/1bDPfnaSTO6T1usUlbhkcPLoE6cebQGLV/view?usp=sharing"],
 
   languages1: ["C", "C++"],
   img4: [c, cplus],
