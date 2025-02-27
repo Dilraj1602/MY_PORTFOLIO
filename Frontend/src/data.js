@@ -19,6 +19,7 @@ import Chess from "./assests/chess-3960184_640.jpg";
 import Razorpay_clone from "./assests/razorpay_clone.png";
 import Portfolio from "./assests/Portfolio.png";
 import Ecomzy from "./assests/Ecomzy.png";
+import FinGenius from "./assests/fingenius.png";
 
 const user_data = {
   bio: `Hey there,👋 I'm Dil Raj, a 20-year-old CSE undergrad passionate
@@ -27,7 +28,7 @@ const user_data = {
     Stack Web Developer 👨🏻‍💻, with a strong interest in AI and problem-solving.
     I share my learnings through speaking engagements and write-ups. ✍🏻`,
 
-  resume:["https://drive.google.com/file/d/1bDPfnaSTO6T1usUlbhkcPLoE6cebQGLV/view?usp=sharing"],
+  resume:["https://drive.google.com/file/d/1bLb-PmM30b0bB5yRSeJfVCRnPV_rWtE3/view?usp=drive_link"],
 
   languages1: ["C", "C++"],
   img4: [c, cplus],
@@ -74,6 +75,12 @@ const user_data = {
       url:"https://github.com/Dilraj1602/StudyNotion"
     },
     {
+      img:FinGenius,
+      title:"FinGenius Ai",
+      description:"Developed an \textbf{AI-powered finance platform} for tracking and managing expenses across multiple accounts.",
+      url:"https://github.com/Dilraj1602/FenGenius_Ai"
+    },
+    {
       img: Tic_Tac_Toe,
       title: "Tic Tac Toe",
       description: " A Tic Tac Toe game with an interactive UI, allowing players to enjoy the game, track moves, and reset the game effortlessly.",
@@ -104,6 +111,7 @@ const user_data = {
       description: "Built a real time weather forecasting application using HTML, CSS , JAVASCRIPT , Tailwind CSS, and Open-WeatherMap API. 🌦️ ",
       url:"https://github.com/Dilraj1602/weather_forecast"
     },
+    
   ],
 
   contacts:[
