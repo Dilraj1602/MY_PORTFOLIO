@@ -5,7 +5,7 @@ import React, { useState } from "react";
 import data from "../data";
 
 function Projects({isdarkmode}) {
-    const [idx, setIdx] = useState(0);
+    const [idx, setIdx] = useState(1);
     const { projects } = data;
     let n = projects.length;
     if (!projects || projects.length === 0) {
