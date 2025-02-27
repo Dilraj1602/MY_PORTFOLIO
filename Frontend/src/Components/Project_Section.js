@@ -1,6 +1,9 @@
 import Button from "./Button";
+import { useState } from "react";
 
-function ProjectsSection({ img, title, description,isdarkmode,url }) {
+function ProjectsSection({ img, title, description, isdarkmode, url }) {
+  const [readmore, setreadmore] = useState(false);
+
   return (
     <div className="w-[95%] sm:w-full max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-6 items-center px-4 md:px-6 py-4 md:py-8">
       {/* Project Image */}
@@ -8,7 +11,7 @@ function ProjectsSection({ img, title, description,isdarkmode,url }) {
         <img
           src={img}
           alt={title}
-          className={` max-w-[200px] sm:max-w-[1080px] w-[80%] h-[80%] md:w-full sm:w-[350px] sm:h-[220px] md:h-[260px] object-fill sm:object-cover border-2 ${isdarkmode?"border-zinc-500":"border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
+          className={`w-[90%] h-[130px] md:w-full sm:w-[350px] sm:h-[220px] md:h-[260px] object-fill sm:object-cover border-2 ${isdarkmode ? "border-zinc-500" : "border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
         />
       </div>
 
@@ -17,9 +20,18 @@ function ProjectsSection({ img, title, description,isdarkmode,url }) {
         <h2 className="text-xl md:text-2xl font-semibold text-[var(--body-font)] font-Poppins">
           {title}
         </h2>
-        <p className={`${isdarkmode?"text-gray-400":"text-gray-600"} text-sm md:text-base leading-relaxed`}>
-          {description}
+        <p className={`${isdarkmode ? "text-gray-400" : "text-gray-600"} text-sm md:text-base leading-relaxed`}>
+          {readmore ? description : `${description.substring(0, 50)}...`}
+          <span>
+            <button
+              onClick={() => setreadmore(!readmore)}
+              className="text-[var(--first-color)] font-semibold"
+            >
+              Read {readmore ? "Less" : "More"}
+            </button>
+          </span>
         </p>
+
         <div className="flex justify-center md:justify-start">
           <Button
             text={"Check Out"}
