@@ -5,6 +5,20 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import DetailsProject from "./Components/DetailsProject";
 
 function App() {
+<<<<<<< HEAD
+=======
+  const [isdarkmode, setisdarkmode] = useState(false);
+
+  function tooglemode() {
+    console.log("toggle");
+    setisdarkmode(!isdarkmode);
+  }
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", isdarkmode ? "dark" : "light");
+  }, [isdarkmode]);
+
+>>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
   return (
     <Router>
     <Routes>

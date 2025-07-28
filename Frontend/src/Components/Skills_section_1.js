@@ -2,7 +2,7 @@ import React from 'react';
 
 function Skills_section_1({ languages1, img4, rate4 }) {
     return (
-        <div className='pt-[6px]'>
+        <div className='pt-[6px] w-[90%] sm:w-full '>
             {languages1.map((language, index) => (
                 <div key={index} className="flex flex-col space-y-1">
                     {/* Make sure you use the index to match the correct image */}

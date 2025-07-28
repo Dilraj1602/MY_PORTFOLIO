@@ -3,7 +3,7 @@ import "../App.css";
 
 function Skills_section({ languages, img1, frameworks, img2, tools, img3, rate1, rate2, rate3, rate4 }) {
     return (
-        <div>
+        <div className='w-[90%] sm:w-full ' >
             {/* Languages */}
             {languages && languages.map((language, index) => (
                 <div key={index} className="flex flex-col space-y-1">

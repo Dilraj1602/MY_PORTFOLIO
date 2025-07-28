@@ -1,17 +1,32 @@
 const express = require('express');
 const cors = require('cors'); 
+<<<<<<< HEAD
 const { createEmailTemplate, createPlainTextTemplate } = require('./template');
 const sgMail = require('@sendgrid/mail');
+=======
+const {connect} = require('./config/database');
+const Response = require('./models/response'); 
+>>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
 
 const app = express();
 require('dotenv').config();
 
+<<<<<<< HEAD
 // Set SendGrid API key
 sgMail.setApiKey(process.env.SENDGRID_API_KEY || 'YOUR_SENDGRID_API_KEY');
 
 app.use(cors());
 app.use(express.json());
 
+=======
+app.use(cors());
+app.use(express.json());
+
+connect();
+
+
+
+>>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
 app.get('/', (req, res) => {
     res.send("hello world");
 });
@@ -19,6 +34,7 @@ app.get('/', (req, res) => {
 app.post('/add', async (req, res) => {
     try {
         const { name, email, subject, message } = req.body;
+<<<<<<< HEAD
         
         // Create email templates
         const htmlContent = createEmailTemplate(name, email, subject, message);
@@ -50,6 +66,12 @@ app.post('/add', async (req, res) => {
             });
         }
 
+=======
+        const newResponse = new Response({ name, email, subject, message });
+
+        await newResponse.save();
+        res.status(201).json({ message: "Response added" });
+>>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Server error. Please try again later." });
