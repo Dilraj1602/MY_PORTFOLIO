@@ -2,24 +2,14 @@ import { useState } from "react";
 import Button from "./Button";
 import "../App.css";
 import toast, { Toaster } from 'react-hot-toast';
+import emailjs from '@emailjs/browser';
 
 function Form({isdarkmode}) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
-
-    async function addresponse(data) {
-        const response = await fetch('http://localhost:4000/add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        console.log(response);
-        return response.json();
-    }
+    const [isLoading, setIsLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -28,26 +18,42 @@ function Form({isdarkmode}) {
             toast.error("All fields are required!");
             return;
         }
-    
-        // Logic to handle form submission, e.g., send data to the backend or show a toast notification
-        console.log({ name, email, subject, message });
+
+        setIsLoading(true);
     
         try {
-            // Wait for the response from the backend before clearing the form
-            await addresponse({ name, email, subject, message });
-            
-            // Show success message once the response is added successfully
-            toast.success("Message sent successfully!");
-            
-            // Clear form fields after successful submission
-            setName("");
-            setEmail("");
-            setSubject("");
-            setMessage("");
+            const templateParams = {
+                to_email: 'wolfstrix360@gmail.com',
+                from_name: name,
+                from_email: email,
+                subject: subject,
+                message: message,
+                reply_to: email
+            };
+
+            const response = await emailjs.send(
+                'service_j3403xp', 
+                'template_lzwzrad', 
+                templateParams,
+                'zWmqCjA8iOd3UhTia' 
+            );
+
+            if (response.status === 200) {
+                toast.success("Message sent successfully!");
+                
+                // Clear form fields after successful submission
+                setName("");
+                setEmail("");
+                setSubject("");
+                setMessage("");
+            } else {
+                throw new Error('Failed to send email');
+            }
         } catch (error) {
-            // If there's an error, show an error toast
             toast.error("Failed to send the message. Please try again later.");
             console.error(error);
+        } finally {
+            setIsLoading(false);
         }
     };
     
@@ -66,8 +72,9 @@ function Form({isdarkmode}) {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
+                    disabled={isLoading}
                     className={`w-full border border-[var(--first-color)] rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[var(--first-color)]
-                        ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"}`}
+                        ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"} ${isLoading ? "opacity-50" : ""}`}
                 />
             </div>
 
@@ -81,8 +88,9 @@ function Form({isdarkmode}) {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
+                    disabled={isLoading}
                     className={`w-full border border-[var(--first-color)] rounded-md px-3 py-2 focus:outline-none focus:ring-2 
-                        focus:ring-[var(--first-color)] ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"}`}
+                        focus:ring-[var(--first-color)] ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"} ${isLoading ? "opacity-50" : ""}`}
                 />
             </div>
 
@@ -96,8 +104,9 @@ function Form({isdarkmode}) {
                     value={subject}
                     onChange={(e) => setSubject(e.target.value)}
                     placeholder="Enter the subject"
+                    disabled={isLoading}
                     className={`w-full ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"} border border-[var(--first-color)] rounded-md px-3 py-2
-                     focus:outline-none focus:ring-2 focus:ring-[var(--first-color)]`}
+                     focus:outline-none focus:ring-2 focus:ring-[var(--first-color)] ${isLoading ? "opacity-50" : ""}`}
                 />
             </div>
 
@@ -111,13 +120,20 @@ function Form({isdarkmode}) {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Enter your message"
                     rows={4}
+                    disabled={isLoading}
                     className={`w-full ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"} border border-[var(--first-color)] rounded-md px-3 py-2
-                     focus:outline-none focus:ring-2 focus:ring-[var(--first-color)]`}  
+                     focus:outline-none focus:ring-2 focus:ring-[var(--first-color)] ${isLoading ? "opacity-50" : ""}`}  
                 />
             </div>
 
             {/* Add type="submit" to Button */}
-            <Button text="Send Message" icon="uil uil-message" type="submit" isdarkmode={isdarkmode} />
+            <Button 
+                text={isLoading ? "Sending..." : "Send Message"} 
+                icon="uil uil-message" 
+                type="submit" 
+                isdarkmode={isdarkmode}
+                disabled={isLoading}
+            />
         </form>
     );
 }

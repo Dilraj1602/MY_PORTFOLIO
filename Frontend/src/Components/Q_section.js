@@ -1,23 +1,31 @@
-function Q_section({ data, place, location, year, type,isdarkmode }) {
+function Q_section({ data, place, location, year, type, isdarkmode }) {
     return (
-        <div className="mt-10 flex flex-col space-y-6 pl-[4%] ">
+        <div className="relative">
             {data && data.length > 0 ? (
                 data.map((item, index) => (
                     <div
                         key={index}
-                        className={`flex flex-col space-y-2 w-[44%] ${
-                            index % 2 === 0 ? "mr-auto" : "ml-auto"
+                        className={`relative mb-8 ${
+                            index % 2 === 0 ? "pr-[55%]" : "pl-[55%]"
                         }`}
                     >
-                        <h1 className="font-Poppins font-[500] text-[1.2rem]">{item}</h1>
-                        <h1 className={`font-Poppins text-[1rem] ${isdarkmode ? "text-gray-400":"text-gray-500"} `}>
-                            {place[index]}, {location[index]} 
-                        </h1>
-                        <h1 className={`font-Poppins text-[1rem] ${isdarkmode ? "text-gray-400":"text-gray-500"} `}>{year[index]}</h1>
+                        <div className={`p-4 ${index % 2 === 0 ? "text-right" : "text-left"}`}>
+                            <h3 className="font-Poppins font-semibold text-lg mb-2">{item}</h3>
+                            <p className={`font-Poppins text-sm mb-1 ${isdarkmode ? "text-gray-300" : "text-gray-600"}`}>
+                                {place[index]}, {location[index]}
+                            </p>
+                            <p className={`font-Poppins text-sm ${isdarkmode ? "text-gray-400" : "text-gray-500"}`}>
+                                {year[index]}
+                            </p>
+                        </div>
                     </div>
                 ))
             ) : (
-                <p>No {type.toLowerCase()} data available.</p>
+                <div className="text-center py-8">
+                    <p className={`${isdarkmode ? "text-gray-400" : "text-gray-500"}`}>
+                        No {type.toLowerCase()} data available.
+                    </p>
+                </div>
             )}
         </div>
     );

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e0a6f11c.css",
+    "main.js": "/static/js/main.8b6a9464.js",
+    "static/media/img-removebg.png": "/static/media/img-removebg.017769c6ff03fdca559f.png",
+    "static/media/razorpay_clone.png": "/static/media/razorpay_clone.24206ae1f0203979f92a.png",
+    "static/media/Ecomzy.png": "/static/media/Ecomzy.34e1d34fd56ce626b093.png",
+    "static/media/studynotion.png": "/static/media/studynotion.ab200cb61bba6293dffd.png",
+    "static/media/Portfolio.png": "/static/media/Portfolio.859d9b1f44a274363ab3.png",
+    "static/media/chess-3960184_640.jpg": "/static/media/chess-3960184_640.066509eeda68779680ff.jpg",
+    "static/media/AvatarMaker (1).png": "/static/media/AvatarMaker (1).620525b5438c5acd5ed3.png",
+    "static/media/c.png": "/static/media/c.68a3e58e87d2ad12894e.png",
+    "static/media/c++.png": "/static/media/c++.44f8fb92d1fc0ad8afc1.png",
+    "index.html": "/index.html",
+    "main.e0a6f11c.css.map": "/static/css/main.e0a6f11c.css.map",
+    "main.8b6a9464.js.map": "/static/js/main.8b6a9464.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e0a6f11c.css",
+    "static/js/main.8b6a9464.js"
+  ]
+}

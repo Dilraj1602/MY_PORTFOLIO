@@ -9,7 +9,6 @@ import VanillaTilt from "vanilla-tilt";
 function Home({isdarkmode}) {
     const { social_media } = data;
 
-    // Scroll function to smoothly scroll to the section
     const handleScroll_1 = (id) => {
         const target = document.getElementById(id);
         if (target) {

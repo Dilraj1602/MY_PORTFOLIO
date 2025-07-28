@@ -61,19 +61,19 @@ function Navbar({ tooglemode, isdarkmode }) {
 
     return (
         <div
-            className={`fixed top-0 left-0 w-full z-50 p-[20px] ${
+            className={`fixed top-0 left-0 w-full z-50 p-4 sm:p-[20px] ${
                 isScrolled ? "shadow-sm" : "shadow-none"
             } transition-all duration-200 ${
                 isdarkmode ? "bg-[var(--dark-body-color)] text-white" : "bg-white text-black"
             }`}
         >
             <div className="max-w-[1000px] mx-auto flex justify-between items-center">
-                <div className={`text-xl font-bold cursor-pointer ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-black"}`}>
+                <div className={`text-lg sm:text-xl font-bold cursor-pointer ${isdarkmode ? "text-[var(--dark-title-color)]" : "text-black"}`}>
                     Dil Raj
                 </div>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex space-x-8">
+                <div className="hidden md:flex space-x-6 lg:space-x-8">
                     {tabs.map((tab) => (
                         <a
                             key={tab.id}
@@ -82,7 +82,7 @@ function Navbar({ tooglemode, isdarkmode }) {
                                 e.preventDefault();
                                 handleScroll(tab.id);
                             }}
-                            className={`transition-colors duration-200 ${
+                            className={`transition-colors duration-200 text-sm lg:text-base ${
                                 selectedTab === tab.id
                                     ? "text-[var(--first-color-second)]"
                                     : isdarkmode
@@ -96,26 +96,26 @@ function Navbar({ tooglemode, isdarkmode }) {
 
                     {/* Dark Mode Toggle */}
                     <div onClick={tooglemode} className="cursor-pointer">
-                        <BsFillSunFill className={`text-2xl ${isdarkmode ? "text-white" : "text-[var(--first-color)]"}`} />
+                        <BsFillSunFill className={`text-xl lg:text-2xl ${isdarkmode ? "text-white" : "text-[var(--first-color)]"}`} />
                     </div>
                 </div>
 
                 {/* Mobile Menu Button */}
                 <div className="flex md:hidden">
                     <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                        <i className="uil uil-bars text-2xl"></i>
+                        <i className="uil uil-bars text-xl sm:text-2xl"></i>
                     </button>
                 </div>
             </div>
 
-            <div onClick={tooglemode} className="cursor-pointer md:hidden absolute top-6 right-[4rem]">
-                        <BsFillSunFill className={`text-2xl ${isdarkmode ? "text-white" : "text-[var(--first-color)]"}`} />
+            <div onClick={tooglemode} className="cursor-pointer md:hidden absolute top-4 sm:top-6 right-12 sm:right-[4rem]">
+                        <BsFillSunFill className={`text-xl sm:text-2xl ${isdarkmode ? "text-white" : "text-[var(--first-color)]"}`} />
             </div>
 
             {/* Mobile Dropdown */}
             {isMenuOpen && (
                 <div
-                    className={`absolute right-4 top-[60px] flex flex-col w-[150px] md:hidden bg-opacity-80 backdrop-blur-md rounded-lg p-3 space-y-3 ${
+                    className={`absolute right-4 top-[60px] flex flex-col w-[140px] sm:w-[150px] md:hidden bg-opacity-80 backdrop-blur-md rounded-lg p-3 space-y-2 sm:space-y-3 ${
                         isdarkmode ? "bg-gray-800 text-white" : "bg-white text-black"
                     }`}
                 >
@@ -128,7 +128,7 @@ function Navbar({ tooglemode, isdarkmode }) {
                                 handleScroll(tab.id);
                                 setIsMenuOpen(false);
                             }}
-                            className={`transition-colors duration-200 ${
+                            className={`transition-colors duration-200 text-sm ${
                                 selectedTab === tab.id
                                     ? "text-[var(--first-color)] font-semibold"
                                     : isdarkmode

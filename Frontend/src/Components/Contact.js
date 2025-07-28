@@ -7,13 +7,13 @@ function Contact({isdarkmode}) {
     console.log(contacts);
 
     return (
-        <div className={`pt-[5.5rem] flex flex-col  relative justify-between items-center w-full mb-10 lg:mb-0 ${isdarkmode ? "text-white" : "text-black"}`}>
-            <h1 className="text-[2rem] font-bold text-[var(--body-font)] font-Poppins">Contact Me</h1>
-            <p className={`text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} `}>Want to connect? My inbox is always open!</p>
+        <div className={`pt-[5.5rem] flex flex-col relative justify-between items-center w-full mb-10 lg:mb-0 px-4 sm:px-0 ${isdarkmode ? "text-white" : "text-black"}`}>
+            <h1 className="text-[1.5rem] sm:text-[2rem] font-bold text-[var(--body-font)] font-Poppins text-center">Contact Me</h1>
+            <p className={`text-[1rem] sm:text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} text-center`}>Want to connect? My inbox is always open!</p>
 
-            <div className="flex flex-col sm:flex-row lg:pt-[7%] md:justify-between mt-12 sm:space-x-[7%] md:space-x-[16%] relative " >
+            <div className="flex flex-col lg:flex-row lg:pt-[7%] lg:justify-between mt-8 sm:mt-12 lg:space-x-[16%] relative w-full max-w-6xl" >
                 {/* Way to connect */}
-                <div className="flex flex-col space-y-[2%]  mb-[20px]  sm:space-y-[20%]  ">
+                <div className="flex flex-col space-y-4 sm:space-y-[2%] mb-8 lg:mb-0 lg:space-y-[20%] w-full lg:w-auto">
                     {contacts.map((contact, index) => {
                         return ( 
                             <Contact_section
@@ -28,7 +28,7 @@ function Contact({isdarkmode}) {
                 </div>
 
                 {/* Form */}
-                <div className="w-[460px] sm:w-[400px] md:w-[460px] lg:w-[600px] ">
+                <div className="w-full sm:w-[400px] lg:w-[600px] mx-auto lg:mx-0">
                     <Form isdarkmode={isdarkmode} />
                 </div>
             </div>

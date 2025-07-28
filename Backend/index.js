@@ -1,42 +1,63 @@
 const express = require('express');
-const cors = require('cors'); // Importing CORS
+const cors = require('cors'); 
+const { createEmailTemplate, createPlainTextTemplate } = require('./template');
+const sgMail = require('@sendgrid/mail');
+
 const app = express();
+require('dotenv').config();
 
-const connectDB = require('./config/database');
-const response = require('./models/response');
+// Set SendGrid API key
+sgMail.setApiKey(process.env.SENDGRID_API_KEY || 'YOUR_SENDGRID_API_KEY');
 
-// Use CORS middleware
-app.use(cors()); 
-
+app.use(cors());
 app.use(express.json());
-
-// In your backend (Express)
-app.post('/add', (req, res) => {
-    const { name, email, subject, message } = req.body;
-    const newResponse = new response({
-        name,
-        email,
-        subject,
-        message
-    });
-
-    newResponse.save()
-        .then(() => {
-            res.status(201).json({ message: "Response added" }); 
-        })
-        .catch((err) => {
-            console.log(err);
-            res.status(500).json({ error: "Server error. Please try again later." }); 
-        });
-});
-
 
 app.get('/', (req, res) => {
     res.send("hello world");
 });
 
-app.listen(4000, () => {
-    console.log("Server is running on port 4000");
+app.post('/add', async (req, res) => {
+    try {
+        const { name, email, subject, message } = req.body;
+        
+        // Create email templates
+        const htmlContent = createEmailTemplate(name, email, subject, message);
+        const textContent = createPlainTextTemplate(name, email, subject, message);
+
+        // Email data for sending
+        const emailData = {
+            to: 'dilraj1602@gmail.com',
+            from: 'dilraj1602@gmail.com', // Verified sender email
+            subject: `Portfolio Contact: ${subject}`,
+            text: textContent,
+            html: htmlContent,
+            replyTo: email // So you can reply directly to the sender
+        };
+
+        // Send email using SendGrid
+        try {
+            await sgMail.send(emailData);
+            console.log('Email sent successfully to dilraj1602@gmail.com');
+            res.status(200).json({ 
+                message: "Email sent successfully!",
+                success: true 
+            });
+        } catch (sendError) {
+            console.error('SendGrid Error:', sendError);
+            res.status(500).json({ 
+                error: "Failed to send email. Please try again later.",
+                success: false 
+            });
+        }
+
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Server error. Please try again later." });
+    }
 });
 
-connectDB();
+// Start Server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+});

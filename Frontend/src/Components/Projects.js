@@ -27,38 +27,39 @@ function Projects({isdarkmode}) {
     };
 
     return (
-        <div className={`pt-[5.5rem] flex flex-col relative justify-center items-center ${isdarkmode?"text-white" :"text-black" }`}>
-            <h1 className="text-[2rem] font-bold text-[var(--body-font)] font-Poppins">
+        <div className={`pt-[5.5rem] flex flex-col relative justify-center items-center px-4 sm:px-0 ${isdarkmode?"text-white" :"text-black" }`}>
+            <h1 className="text-[1.5rem] sm:text-[2rem] font-bold text-[var(--body-font)] font-Poppins text-center">
                 Projects
             </h1>
-            <p className={`text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} `}>Most recent work</p>
+            <p className={`text-[1rem] sm:text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} text-center`}>Most recent work</p>
 
-            <div className="flex  items-center justify-center mt-10 lg:w-[1000px] space-x-4 ">
+            <div className="flex items-center justify-center mt-8 sm:mt-10 lg:w-[1000px] space-x-2 sm:space-x-4 w-full">
                 {/* Left Button */}
-                <div className="">
-
+                <div className="flex-shrink-0">
                     <FaAngleLeft
-                        size="3rem"
-                        className="hover:cursor-pointer text-[var(--first-color)]"
+                        size="2rem"
+                        className="sm:text-3rem hover:cursor-pointer text-[var(--first-color)]"
                         onClick={handlePrev}
                     />
                 </div>
 
                 {/* Render Active Project */}
-                <ProjectsSection
-                    img={projects[idx].img}
-                    title={projects[idx].title}
-                    description={projects[idx].description}
-                    url={projects[idx].url}
-                    className=" "
-                    isdarkmode={isdarkmode}
-                />
+                <div className="flex-1 max-w-full">
+                    <ProjectsSection
+                        img={projects[idx].img}
+                        title={projects[idx].title}
+                        description={projects[idx].description}
+                        url={projects[idx].url}
+                        className=""
+                        isdarkmode={isdarkmode}
+                    />
+                </div>
 
                 {/* Right Button */}
-                <div>
+                <div className="flex-shrink-0">
                     <FaAngleRight
-                        size="3rem"
-                        className="hover:cursor-pointer text-[var(--first-color)]"
+                        size="2rem"
+                        className="sm:text-3rem hover:cursor-pointer text-[var(--first-color)]"
                         onClick={handleNext}
                     />
                 </div>

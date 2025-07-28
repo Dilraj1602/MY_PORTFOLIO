@@ -9,6 +9,7 @@ import { VscVscode } from "react-icons/vsc";
 import { CiMail } from "react-icons/ci";
 import { TbBrandTwitter } from "react-icons/tb";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { SiGeeksforgeeks } from "react-icons/si";
 
 
 import c from "./assests/c.png";
@@ -27,7 +28,7 @@ const user_data = {
     Stack Web Developer 👨🏻‍💻, with a strong interest in AI and problem-solving.
     I share my learnings through speaking engagements and write-ups. ✍🏻`,
 
-  resume:["https://drive.google.com/file/d/1bLb-PmM30b0bB5yRSeJfVCRnPV_rWtE3/view?usp=drive_link"],
+  resume:["https://drive.google.com/file/d/1yLNd0s0emRM3Rx8go0CP-3Qe23ZY2Hq9/view?usp=drive_link"],
 
   languages1: ["C", "C++"],
   img4: [c, cplus],
@@ -61,22 +62,25 @@ const user_data = {
   place: ["Indian Institute of Information Technology, Nagpur", "P.B High School", "B.V.P School"],
   location: ["Maharashtra", "Lakhisarai, Bihar", "Lakhisarai, Bihar"],
   year: ["2022-2026", "2020-2022", "2016-2020"],
+  education_urls: ["https://github.com/Dilraj1602", "https://github.com/Dilraj1602", "https://github.com/Dilraj1602"],
+
   work: ["NA", "NA", "NA"],
   w_place: ["NA", "NA", "NA"],
   w_location: ["NA", "NA", "NA"],
   w_year: ["NA", "NA", "NA"],
+  work_urls: ["https://github.com/Dilraj1602", "https://github.com/Dilraj1602", "https://github.com/Dilraj1602"],
 
   projects: [
     {
       img:Studynotion,
       title: "Study Notion",
-      description: "An E-Learning Platform where Students can purchase, filter, and track courses, while instructors can upload content and engage with learners. The platform offers secure payments, progress tracking, and certifications, making online education seamless and accessible. 🚀",
+      description: "An E-Learning platform where students can purchase, filter, and track courses, while instructors upload content. 🚀",
       url:"https://github.com/Dilraj1602/StudyNotion"
     },
     {
       img: Tic_Tac_Toe,
       title: "Tic Tac Toe",
-      description: "A classic two-player game built with interactive UI, allowing users to play and reset the game seamlessly.",
+      description: " A Tic Tac Toe game with an interactive UI, allowing players to enjoy the game, track moves, and reset the game effortlessly.",
       url:"https://github.com/Dilraj1602/Tic-Tac-Toe"
 
     },
@@ -101,7 +105,7 @@ const user_data = {
     {
       img: Ecomzy,
       title: "Weather Forecast",
-      description: "Built a real time weather forecasting application using React.js, Tailwind CSS, and Open-WeatherMap API, API calls for real-time data (temperature, humidity, wind speed)",
+      description: "Built a real time weather forecasting application using HTML, CSS , JAVASCRIPT , Tailwind CSS, and Open-WeatherMap API. 🌦️ ",
       url:"https://github.com/Dilraj1602/weather_forecast"
     },
   ],
@@ -140,6 +144,9 @@ const user_data = {
     {
       url:"https://leetcode.com/u/WOLFStrix360/",
       icon:<SiLeetcode />,
+    },{
+      url:"https://www.geeksforgeeks.org/user/wolfstrix360/",
+      icon:<SiGeeksforgeeks />,
     }
   ],
 

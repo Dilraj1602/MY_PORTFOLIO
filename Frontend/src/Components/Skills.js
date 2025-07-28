@@ -14,23 +14,23 @@ function Skills({ isdarkmode }) {
   const { languages, frameworks, tools, languages1, img4, img1, img2, img3, rate1, rate2, rate3, rate4 } = user_data;
   // 
   return (
-    <div className={`md:pt-[5.5rem] flex flex-col relative justify-center items-center ${isdarkmode ? "text-white" : "text-black"}   `}>
-      <h1 className={`text-[2rem] ${isdarkmode ? "text-white" : "text-black"} font-bold text-[var(--body-font)] font-Poppins`}>Skills</h1>
-      <p className={`text-[1.1rem] ${isdarkmode ? "text-gray-400" : "text-gray-500"} mb-10`}>My Technical Skills</p>
+    <div className={`md:pt-[5.5rem] flex flex-col relative justify-center items-center px-4 sm:px-0 ${isdarkmode ? "text-white" : "text-black"}   `}>
+      <h1 className={`text-[1.5rem] sm:text-[2rem] ${isdarkmode ? "text-white" : "text-black"} font-bold text-[var(--body-font)] font-Poppins text-center`}>Skills</h1>
+      <p className={`text-[1rem] sm:text-[1.1rem] ${isdarkmode ? "text-gray-400" : "text-gray-500"} mb-6 sm:mb-10 text-center`}>My Technical Skills</p>
 
-      <div className="grid grid-cols-1 gap-[40px] md:grid-cols-2 md:gap-[80px] mt-8 pl-[1%] md:pl-[7%] ">
+      <div className="grid grid-cols-1 gap-6 sm:gap-[40px] md:grid-cols-2 md:gap-[80px] mt-6 sm:mt-8 pl-0 md:pl-[7%] w-full max-w-6xl">
         {/* Languages */}
         <div className="relative">
           <div>
             <PiBracketsAngleBold
-              size="2.5rem"
-              className="text-[var(--first-color)] hover:cursor-pointer absolute left-[-13%] sm:left-[-12%] top-[10px] "
+              size="2rem"
+              className="sm:text-2.5rem text-[var(--first-color)] hover:cursor-pointer absolute left-0 sm:left-[-12%] top-[10px] "
               onClick={() => setIsDown1(!isdown1)}
             />
           </div>
-          <div className={`font-Poppins  text-xl font-[600]`}>Languages</div>
+          <div className="font-Poppins text-lg sm:text-xl font-[600] pl-8 sm:pl-0">Languages</div>
           <p
-            className="flex items-center hover:cursor-pointer text-gray-400 select-none "
+            className="flex items-center hover:cursor-pointer text-gray-400 select-none text-sm sm:text-base pl-8 sm:pl-0"
             onClick={() => setIsDown1(!isdown1)}
           >
             Languages that I have picked up over the years
@@ -46,14 +46,14 @@ function Skills({ isdarkmode }) {
         <div className="relative">
           <div>
             <PiBracketsCurlyBold
-              size="2.5rem"
-              className="text-[var(--first-color)] hover:cursor-pointer absolute left-[-13%] sm:left-[-12%] top-[10px] "
+              size="2rem"
+              className="sm:text-2.5rem text-[var(--first-color)] hover:cursor-pointer absolute left-0 sm:left-[-12%] top-[10px] "
               onClick={() => setIsDown2(!isdown2)}
             />
           </div>
-          <div className="font-Poppins text-xl font-[600]">Libraries & Frameworks</div>
+          <div className="font-Poppins text-lg sm:text-xl font-[600] pl-8 sm:pl-0">Libraries & Frameworks</div>
           <p
-            className="flex items-center hover:cursor-pointer text-gray-400 select-none "
+            className="flex items-center hover:cursor-pointer text-gray-400 select-none text-sm sm:text-base pl-8 sm:pl-0"
             onClick={() => setIsDown2(!isdown2)} 
           >
             Libraries and Frameworks that I prefer to work with
@@ -65,17 +65,17 @@ function Skills({ isdarkmode }) {
         </div>
 
         {/* Tools */}
-        <div className="relative">
+        <div className="relative md:col-span-2 lg:col-span-1">
           <div>
             <GoTools
-              size="2.5rem"
-              className="text-[var(--first-color)] hover:cursor-pointer absolute left-[-13%] sm:left-[-12%] top-[10px] "
+              size="2rem"
+              className="sm:text-2.5rem text-[var(--first-color)] hover:cursor-pointer absolute left-0 sm:left-[-12%] top-[10px] "
               onClick={() => setIsDown3(!isdown3)}
             />
           </div>
-          <div className="font-Poppins text-xl font-[600]  ">Tools</div>
+          <div className="font-Poppins text-lg sm:text-xl font-[600] pl-8 sm:pl-0">Tools</div>
           <p
-            className="flex items-center hover:cursor-pointer text-gray-400 select-none "
+            className="flex items-center hover:cursor-pointer text-gray-400 select-none text-sm sm:text-base pl-8 sm:pl-0"
             onClick={() => setIsDown3(!isdown3)}
           >
             Tools that I know and use on a daily basis
