@@ -9,6 +9,7 @@ import { VscVscode } from "react-icons/vsc";
 import { CiMail } from "react-icons/ci";
 import { TbBrandTwitter } from "react-icons/tb";
 import { MdOutlineMailOutline } from "react-icons/md";
+import { SiGeeksforgeeks } from "react-icons/si";
 
 
 import c from "./assests/c.png";
@@ -28,7 +29,7 @@ const user_data = {
     Stack Web Developer 👨🏻‍💻, with a strong interest in AI and problem-solving.
     I share my learnings through speaking engagements and write-ups. ✍🏻`,
 
-  resume:["https://drive.google.com/file/d/1uIbNf2dLIhizMzlaHp-qj7N4yay8ritg/view?usp=drive_link"],
+  resume:["https://drive.google.com/file/d/1yLNd0s0emRM3Rx8go0CP-3Qe23ZY2Hq9/view?usp=drive_link"],
 
   languages1: ["C", "C++"],
   img4: [c, cplus],
@@ -62,10 +63,13 @@ const user_data = {
   place: ["Indian Institute of Information Technology, Nagpur", "P.B High School", "B.V.P School"],
   location: ["Maharashtra", "Lakhisarai, Bihar", "Lakhisarai, Bihar"],
   year: ["2022-2026", "2020-2022", "2016-2020"],
+  education_urls: ["https://github.com/Dilraj1602", "https://github.com/Dilraj1602", "https://github.com/Dilraj1602"],
+
   work: ["NA", "NA", "NA"],
   w_place: ["NA", "NA", "NA"],
   w_location: ["NA", "NA", "NA"],
   w_year: ["NA", "NA", "NA"],
+  work_urls: ["https://github.com/Dilraj1602", "https://github.com/Dilraj1602", "https://github.com/Dilraj1602"],
 
   projects: [
     {
@@ -148,6 +152,9 @@ const user_data = {
     {
       url:"https://leetcode.com/u/WOLFStrix360/",
       icon:<SiLeetcode />,
+    },{
+      url:"https://www.geeksforgeeks.org/user/wolfstrix360/",
+      icon:<SiGeeksforgeeks />,
     }
   ],
 
