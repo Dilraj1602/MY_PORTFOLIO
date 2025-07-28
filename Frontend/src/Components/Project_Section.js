@@ -1,67 +1,43 @@
-import Button from "./Button";
-import { useState } from "react";
+import React from "react";
+import "../App.css";
 
-function ProjectsSection({ img, title, description, isdarkmode, url }) {
-  const [readmore, setreadmore] = useState(false);
-
-<<<<<<< HEAD
-function ProjectsSection({ img, title, description, isdarkmode, url }) {
+function Project_Section({ img, title, description, url, isdarkmode }) {
   const handleCheckOut = () => {
-    if (url) {
-      window.open(url, '_blank');
-    }
+    window.open(url, "_blank");
   };
 
-=======
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
   return (
-    <div className="w-[95%] sm:w-full max-w-7xl mx-auto flex flex-col md:flex-row md:space-x-6 items-center px-4 md:px-6 py-4 md:py-8">
-      {/* Project Image */}
-      <div className="w-full md:w-1/2 max-w-lg flex justify-center md:justify-start">
-        <img
-          src={img}
-          alt={title}
-<<<<<<< HEAD
-          className={` sm:w-[80%] md:w-full w-[400px] h-[220px] md:h-[260px] object-cover border-2 ${isdarkmode ? "border-zinc-500" : "border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
-=======
-          className={`w-[90%] h-[130px] md:w-full sm:w-[350px] sm:h-[220px] md:h-[260px] object-fill sm:object-cover border-2 ${isdarkmode ? "border-zinc-500" : "border-[var(--dark-body-color)]"} rounded-lg shadow-md`}
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
-        />
-      </div>
-
-      {/* Project Details */}
-      <div className="w-[95%] md:w-1/2 flex flex-col space-y-4 text-center md:text-left mt-6 md:mt-0">
-        <h2 className="text-xl md:text-2xl font-semibold text-[var(--body-font)] font-Poppins">
-          {title}
-        </h2>
-        <p className={`${isdarkmode ? "text-gray-400" : "text-gray-600"} text-sm md:text-base leading-relaxed`}>
-<<<<<<< HEAD
-          {description}
-=======
-          {readmore ? description : `${description.substring(0, 50)}...`}
-          <span>
-            <button
-              onClick={() => setreadmore(!readmore)}
-              className="text-[var(--first-color)] font-semibold"
-            >
-              Read {readmore ? "Less" : "More"}
-            </button>
-          </span>
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
-        </p>
-
-        <div className="flex justify-center md:justify-start">
-          <Button
-            text={"Check Out"}
-            icon="uil uil-arrow-right button_icon"
-            aria-label={`Check out project: ${title}`}
-            isdarkmode={isdarkmode}
-            onClick={handleCheckOut}
+    <div className={`w-full sm:w-[400px] lg:w-[600px] border-2 border-[var(--first-color)] rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 ${isdarkmode ? "bg-[var(--dark-body-color)]" : "bg-white"}`}>
+      <div className="space-y-4">
+        {/* Project Image */}
+        <div className="w-full h-48 overflow-hidden rounded-lg">
+          <img
+            src={img}
+            alt={title}
+            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
+        </div>
+
+        {/* Project Info */}
+        <div className="space-y-3">
+          <h3 className={`text-xl font-semibold ${isdarkmode ? "text-white" : "text-gray-800"}`}>
+            {title}
+          </h3>
+          <p className={`text-sm leading-relaxed ${isdarkmode ? "text-gray-300" : "text-gray-600"}`}>
+            {description}
+          </p>
+          
+          {/* Check Out Button */}
+          <button
+            onClick={handleCheckOut}
+            className={`w-full py-2 px-4 bg-[var(--first-color)] text-white rounded-md hover:bg-opacity-90 transition-all duration-300 font-medium`}
+          >
+            Check Out
+          </button>
         </div>
       </div>
     </div>
   );
 }
 
-export default ProjectsSection;
+export default Project_Section;

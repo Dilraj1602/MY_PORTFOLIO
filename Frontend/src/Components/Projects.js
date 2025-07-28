@@ -1,101 +1,75 @@
-import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import "../App.css";
-import ProjectsSection from "./Project_Section";
 import React, { useState } from "react";
-import data from "../data";
+import "../App.css";
+import user_data from "../data";
+import Project_Section from "./Project_Section";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
-function Projects({isdarkmode}) {
-    const [idx, setIdx] = useState(1);
-    const { projects } = data;
-    let n = projects.length;
-    if (!projects || projects.length === 0) {
-        return (
-            <div className="pt-[5.5rem] flex flex-col justify-center items-center">
-                <h1>No Projects Available</h1>
-            </div>
-        );
-    }
+function Projects({ isdarkmode }) {
+  const { projects } = user_data;
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-    // Handle previous button click
-    const handlePrev = () => {
-        setIdx((prevIdx) => (prevIdx - 1 + projects.length) % projects.length);
-    };
+  const nextProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % projects.length);
+  };
 
-    // Handle next button click
-    const handleNext = () => {
-        setIdx((prevIdx) => (prevIdx + 1) % projects.length);
-    };
+  const prevProject = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
 
-    return (
-<<<<<<< HEAD
-        <div className={`pt-[5.5rem] flex flex-col relative justify-center items-center px-4 sm:px-0 ${isdarkmode?"text-white" :"text-black" }`}>
-            <h1 className="text-[1.5rem] sm:text-[2rem] font-bold text-[var(--body-font)] font-Poppins text-center">
-=======
-        <div className={`w-[99%] pt-[5.5rem] flex flex-col relative justify-center items-center ${isdarkmode?"text-white" :"text-black" }`}>
-            <h1 className="text-[2rem] font-bold text-[var(--body-font)] font-Poppins">
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
-                Projects
-            </h1>
-            <p className={`text-[1rem] sm:text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} text-center`}>Most recent work</p>
+  return (
+    <div className={`pt-[5.5rem] flex flex-col relative justify-between items-center w-full mb-10 lg:mb-0 px-4 sm:px-0 ${isdarkmode ? "text-white" : "text-black"}`}>
+      <h1 className="text-[1.5rem] sm:text-[2rem] font-bold text-[var(--body-font)] font-Poppins text-center">Projects</h1>
+      <p className={`text-[1rem] sm:text-[1.1rem] ${isdarkmode?"text-gray-400":"text-gray-500"} text-center`}>My Recent Work</p>
 
-<<<<<<< HEAD
-            <div className="flex items-center justify-center mt-8 sm:mt-10 lg:w-[1000px] space-x-2 sm:space-x-4 w-full">
-=======
-            <div className="flex w-[79%] sm:w-full items-center justify-center mt-10 lg:w-[1000px] sm:space-x-4 ">
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
-                {/* Left Button */}
-                <div className="flex-shrink-0">
-                    <FaAngleLeft
-<<<<<<< HEAD
-                        size="2rem"
-                        className="sm:text-3rem hover:cursor-pointer text-[var(--first-color)]"
-=======
-                        className="hover:cursor-pointer text-[var(--first-color)] text-[2rem] sm:text-[3rem]  "
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
-                        onClick={handlePrev}
-                    />
-                </div>
+      <div className="flex-1 max-w-full mt-8 sm:mt-10">
+        <div className="flex items-center justify-center space-x-2 sm:space-x-4">
+          <button
+            onClick={prevProject}
+            className={`p-2 rounded-full ${isdarkmode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300"} transition-colors duration-200`}
+            aria-label="Previous project"
+          >
+            <IoIosArrowBack size="2rem" className="sm:text-3rem" />
+          </button>
 
-                {/* Render Active Project */}
-                <div className="flex-1 max-w-full">
-                    <ProjectsSection
-                        img={projects[idx].img}
-                        title={projects[idx].title}
-                        description={projects[idx].description}
-                        url={projects[idx].url}
-                        className=""
-                        isdarkmode={isdarkmode}
-                    />
-                </div>
+          <div className="flex-1 flex justify-center">
+            <Project_Section
+              img={projects[currentIndex].img}
+              title={projects[currentIndex].title}
+              description={projects[currentIndex].description}
+              url={projects[currentIndex].url}
+              isdarkmode={isdarkmode}
+            />
+          </div>
 
-                {/* Right Button */}
-                <div className="flex-shrink-0">
-                    <FaAngleRight
-<<<<<<< HEAD
-                        size="2rem"
-                        className="sm:text-3rem hover:cursor-pointer text-[var(--first-color)]"
-=======
-                        className="hover:cursor-pointer text-[var(--first-color)] text-[2rem] sm:text-[3rem] "
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
-                        onClick={handleNext}
-                    />
-                </div>
-            </div>
-            {/* dot symbol */}
-            <div className="flex justify-center mt-4">
-                {projects.map((project, index) => (
-                    <div
-                        key={index}
-                        className={`h-2 w-2 rounded-full mx-1 cursor-pointer ${index === idx ? "bg-[var(--first-color)]" : "bg-gray-400"
-                            }`}
-                        onClick={() => setIdx(index)}  
-                    ></div>
-                ))}
-            </div>
-
-
+          <button
+            onClick={nextProject}
+            className={`p-2 rounded-full ${isdarkmode ? "bg-gray-700 hover:bg-gray-600" : "bg-gray-200 hover:bg-gray-300"} transition-colors duration-200`}
+            aria-label="Next project"
+          >
+            <IoIosArrowForward size="2rem" className="sm:text-3rem" />
+          </button>
         </div>
-    );
+
+        {/* Project Indicators */}
+        <div className="flex justify-center mt-6 space-x-2">
+          {projects.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+                index === currentIndex
+                  ? "bg-[var(--first-color)]"
+                  : isdarkmode
+                  ? "bg-gray-600"
+                  : "bg-gray-300"
+              }`}
+              aria-label={`Go to project ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Projects;

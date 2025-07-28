@@ -25,52 +25,30 @@ function About({isdarkmode}) {
   };
 
   return (
-<<<<<<< HEAD
     <div className="mt-[5.5rem] flex flex-col relative justify-between items-center mx-auto px-4 sm:px-0">
       {/* Header Section */}
       <h1 className={`text-[1.5rem] sm:text-[2rem] font-bold ${isdarkmode ?"text-white ": "text-black"} text-[var(--body-font)] font-Poppins text-center`}>
-=======
-    <div className="mt-[5.5rem] px-[5%] sm:px-0 w-[90%] sm:w-full flex flex-col relative justify-between items-center mx-auto">
-      {/* Header Section */}
-      <h1 className={`text-[1.5rem] sm:text-[2rem] font-bold ${isdarkmode ?"text-white ": "text-black"} text-[var(--body-font)] font-Poppins`}>
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
         About Me
       </h1>
       <p className="text-[1rem] sm:text-[1.1rem] text-gray-400 text-center">My Introduction</p>
 
       {/* Main Section */}
-<<<<<<< HEAD
       <div className="py-8 sm:py-[50px] md:pl-[7%] flex flex-col items-center space-y-8 sm:space-y-10 md:flex-row md:space-x-[100px] md:justify-between w-full">
-=======
-      <div className="py-[50px] md:pl-[7%] flex flex-col items-center space-y-10 md:flex-row md:space-x-[100px] md:justify-between w-[90%] sm:w-[100%]">
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
         {/* Image Section with Tilt Effect */}
         <div className="md:w-[400px] md:pt-[20px] w-full flex justify-center">
           <img
             src={user_img}
             alt="User"
-<<<<<<< HEAD
             className="tilt-effect w-[280px] h-[320px] sm:w-[350px] sm:h-[400px] object-cover rounded-xl"
-=======
-            className="tilt-effect w-[300px] h-[330px] sm:w-[350px] sm:h-[400px] object-cover rounded-xl"
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
           />
         </div>
 
         {/* Text Section */}
-<<<<<<< HEAD
         <div className="md:w-[55%] flex flex-col space-y-6 sm:space-y-[40px] w-full">
           <div className={`w-full md:w-[78%] leading-7 sm:leading-[2rem] font-Poppins text-lg sm:text-xl ${isdarkmode ?"text-[var(--dark-text-color)]" :"text-[var(--text-color)]"} text-center md:text-left`}>
             {user_data.bio} {/* Displaying bio from data */}
           </div>
           <div onClick={openResume} className="flex justify-center md:justify-start">
-=======
-        <div className=" md:w-[55%] flex flex-col items-center justify-center sm:items-start sm:justify-start space-y-[40px]">
-          <div className={`w-[100%]  sm:w-[95%] leading-[2rem] font-Poppins text-base sm:text-xl ${isdarkmode ?"text-[var(--dark-text-color)]" :"text-[var(--text-color)]"} `}>
-            {user_data.bio} {/* Displaying bio from data */}
-          </div>
-          <div onClick={openResume} className="flex justify-center sm:justify-start items-center ">
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
             <Button text="Resume" icon="uil uil-file-download-alt button_icon" isdarkmode={isdarkmode} />
           </div>
         </div>

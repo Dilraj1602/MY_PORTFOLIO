@@ -9,22 +9,7 @@ function Form({isdarkmode}) {
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
-<<<<<<< HEAD
     const [isLoading, setIsLoading] = useState(false);
-=======
-
-    async function addresponse(data) {
-        const response = await fetch('https://my-portfolio-i7oq.onrender.com/add', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        });
-        console.log(response);
-        return response.json();
-    }
->>>>>>> 75eb4da51fab6545e5233401190809173a84d4d8
 
     const handleSubmit = async (e) => {
         e.preventDefault();
