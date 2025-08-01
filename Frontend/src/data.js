@@ -14,6 +14,7 @@ import { SiGeeksforgeeks } from "react-icons/si";
 
 import c from "./assests/c.png";
 import cplus from "./assests/c++.png";
+import StudyTrack from "./assests/Study_Track.png"
 import Studynotion from "./assests/studynotion.png";
 import Tic_Tac_Toe from "./assests/tic_tac_toe.jpeg";
 import Chess from "./assests/chess-3960184_640.jpg";
@@ -21,6 +22,7 @@ import Razorpay_clone from "./assests/razorpay_clone.png";
 import Portfolio from "./assests/Portfolio.png";
 import Ecomzy from "./assests/Ecomzy.png";
 import FinGenius from "./assests/fingenius.png";
+import SolarOptima from "./assests/Ml_project.png"
 
 const user_data = {
   bio: `Hey there,👋 I'm Dil Raj, a 20-year-old CSE undergrad passionate
@@ -29,7 +31,7 @@ const user_data = {
     Stack Web Developer 👨🏻‍💻, with a strong interest in AI and problem-solving.
     I share my learnings through speaking engagements and write-ups. ✍🏻`,
 
-  resume:["https://drive.google.com/file/d/1yLNd0s0emRM3Rx8go0CP-3Qe23ZY2Hq9/view?usp=drive_link"],
+  resume: ["https://drive.google.com/file/d/1yLNd0s0emRM3Rx8go0CP-3Qe23ZY2Hq9/view?usp=drive_link"],
 
   languages1: ["C", "C++"],
   img4: [c, cplus],
@@ -73,88 +75,88 @@ const user_data = {
 
   projects: [
     {
-      img:Studynotion,
-      title: "Study Notion",
-      description: "An E-Learning platform where students can purchase, filter, and track courses, while instructors upload content. 🚀",
-      url:"https://github.com/Dilraj1602/StudyNotion"
+      img: StudyTrack,
+      title: "StudyTrack AI",
+      description: "An AI-powered study management platform enabling students to track tasks, visualize progress, and interact with a smart chatbot, while instructors manage and upload content.",
+      url: "https://github.com/Dilraj1602/StudyTrack"
     },
     {
-      img:FinGenius,
-      title:"FinGenius Ai",
-      description:"Developed an \textbf{AI-powered finance platform} for tracking and managing expenses across multiple accounts.",
-      url:"https://github.com/Dilraj1602/FenGenius_Ai"
+      img: FinGenius,
+      title: "FinGenius Ai",
+      description: "Developed an \textbf{AI-powered finance platform} for tracking and managing expenses across multiple accounts.",
+      url: "https://github.com/Dilraj1602/FenGenius_Ai"
+    },
+    {
+      img: Studynotion,
+      title: "Study Notion",
+      description: "An E-Learning platform where students can purchase, filter, and track courses, while instructors upload content. 🚀",
+      url: "https://github.com/Dilraj1602/StudyNotion"
+    },
+    {
+      img: SolarOptima,
+      title: "SolarOptima",
+      description: "A machine learning-powered solar tracking system that predicts solar elevation with high accuracy using XGBoost and real-time data visualization via Streamlit. ☀️📈",
+      url: "https://github.com/Dilraj1602/Energy_optimisation"
     },
     {
       img: Tic_Tac_Toe,
       title: "Tic Tac Toe",
       description: " A Tic Tac Toe game with an interactive UI, allowing players to enjoy the game, track moves, and reset the game effortlessly.",
-      url:"https://github.com/Dilraj1602/Tic-Tac-Toe"
+      url: "https://github.com/Dilraj1602/Tic-Tac-Toe"
 
     },
     {
       img: Chess,
       title: "Chess",
       description: "A fully functional chess game with drag-and-drop functionality, supporting two-player mode and game reset.",
-      url:"https://github.com/Dilraj1602/Chess"
-    },
-    {
-      img: Razorpay_clone,
-      title: "Razorpay Clone",
-      description: "A simplified clone of the Razorpay payment gateway, showcasing user-friendly interfaces and mock payment processing.",
-      url:"https://github.com/Dilraj1602/Razorpay_clone_frontend"
-    },
-    {
-      img: Portfolio,
-      title: "Portfolio",
-      description: "A personal portfolio website to showcase skills, projects, and achievements, built with responsive design and smooth navigation.",
-      url:"https://github.com/Dilraj1602/MY_PORTFOLIO"
+      url: "https://github.com/Dilraj1602/Chess"
     },
     {
       img: Ecomzy,
       title: "Weather Forecast",
       description: "Built a real time weather forecasting application using HTML, CSS , JAVASCRIPT , Tailwind CSS, and Open-WeatherMap API. 🌦️ ",
-      url:"https://github.com/Dilraj1602/weather_forecast"
+      url: "https://github.com/Dilraj1602/weather_forecast"
     },
-    
+
   ],
 
-  contacts:[
+  contacts: [
     {
-      icon:<MdOutlineMailOutline />,
-      title:"Email",
-      description:"wolfstrix360@outlook.com",
+      icon: <MdOutlineMailOutline />,
+      title: "Email",
+      description: "wolfstrix360@outlook.com",
     },
     {
-      icon:<FaInstagram />,
-      title:"Instagram",
-      description:"@dilraj_1602",
+      icon: <FaInstagram />,
+      title: "Instagram",
+      description: "@dilraj_1602",
     },
     {
-      icon:<TbBrandTwitter />,
-      title:"Twitter",
-      description:"@Dilraj1602",      
+      icon: <TbBrandTwitter />,
+      title: "Twitter",
+      description: "@Dilraj1602",
     },
   ],
 
-  social_media:[
+  social_media: [
     {
-      url:"https://www.linkedin.com/in/dil-raj-503b44266/",
-      icon:<FaLinkedinIn />,
+      url: "https://www.linkedin.com/in/dil-raj-503b44266/",
+      icon: <FaLinkedinIn />,
     },
     {
-      url:"https://github.com/Dilraj1602",
-      icon:<FaGithub />,
+      url: "https://github.com/Dilraj1602",
+      icon: <FaGithub />,
     },
     {
-      url:"https://www.codechef.com/users/wolfstrix360",
-      icon:<SiCodechef />,
+      url: "https://www.codechef.com/users/wolfstrix360",
+      icon: <SiCodechef />,
     },
     {
-      url:"https://leetcode.com/u/WOLFStrix360/",
-      icon:<SiLeetcode />,
-    },{
-      url:"https://www.geeksforgeeks.org/user/wolfstrix360/",
-      icon:<SiGeeksforgeeks />,
+      url: "https://leetcode.com/u/WOLFStrix360/",
+      icon: <SiLeetcode />,
+    }, {
+      url: "https://www.geeksforgeeks.org/user/wolfstrix360/",
+      icon: <SiGeeksforgeeks />,
     }
   ],
 

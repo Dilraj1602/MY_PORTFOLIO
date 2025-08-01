@@ -32,16 +32,15 @@ function Form({isdarkmode}) {
             };
 
             const response = await emailjs.send(
-                'service_j3403xp', 
-                'template_lzwzrad', 
+                'service_ypkvp3s', 
+                'template_5ou14y6', 
                 templateParams,
-                'zWmqCjA8iOd3UhTia' 
+                'QFERjLgEl99pAr9QA' 
             );
 
             if (response.status === 200) {
                 toast.success("Message sent successfully!");
                 
-                // Clear form fields after successful submission
                 setName("");
                 setEmail("");
                 setSubject("");
